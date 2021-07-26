@@ -79,8 +79,8 @@
 
 ; Right Ctrl -> ignore
 ; >^v::Return,
->^s::Return,
->^w::Return,
+;>^s::Return,
+;>^w::Return,
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -135,6 +135,33 @@ ToggleVscode()
   }
 }
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; eclipse hotkey
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Right Ctrl + w
+>^w::ToggleEclipse()
+
+ToggleEclipse()
+{
+  if !WinActive(WinMatcher) {
+    WinActivate,ahk_exe eclipse.exe
+  }
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; A5MK2 hotkey
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Right Ctrl + s
+>^s::ToggleA5()
+
+ToggleA5()
+{
+  if !WinActive(WinMatcher) {
+    WinActivate,ahk_exe A5M2.exe
+  }
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; windows terminal hotkey(hide & run)
