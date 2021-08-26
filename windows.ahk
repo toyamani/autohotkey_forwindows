@@ -39,8 +39,11 @@
 <!a::Send, ^a
 <!n::Send, ^n
 <!s::Send, ^s
+; Windows Terminal Exception (alt + c = copy, alt + v = peast)
+#IfWinNotActive ahk_class CASCADIA_HOSTING_WINDOW_CLASS
 <!v::Send, ^v
 <!c::Send, ^c
+#If
 <!x::Send, ^x
 <!z::Send, ^z
 <!k::Send, ^k  ; vscode
@@ -79,8 +82,8 @@
 
 ; Right Ctrl -> ignore
 ; >^v::Return,
-;>^s::Return,
-;>^w::Return,
+; >^s::Return,
+; >^w::Return,
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -125,15 +128,15 @@ ToggleChrome()
 ; vscode hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + v
->^v::ToggleVscode()
-
-ToggleVscode()
-{
-  if !WinActive(WinMatcher) {
-    WinActivate,ahk_exe code.exe
-  }
-}
+; Right Ctrl + c
+;>^c::ToggleVscode()
+;
+;ToggleVscode()
+;{
+;  if !WinActive(WinMatcher) {
+;    WinActivate,ahk_exe code.exe
+;  }
+;}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; eclipse hotkey
