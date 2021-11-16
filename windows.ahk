@@ -17,8 +17,9 @@
 >^h::Send, {Backspace}
 >^d::Send, {Delete}
 >^k::Send, {Shift down}{End}{Shift up}{Backspace}
-!>^e::Send, ^{End} ;vscode
-!>^a::Send, ^{Home} ;vscode
+; NOTE: Disabled for Eclipse shortcut
+; !>^e::Send, ^{End} ;vscode
+; !>^a::Send, ^{Home} ;vscode
 
 ; Shift + emacs keybinds
 +>^b::Send, +{Left}
@@ -99,8 +100,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; windows terminal hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + i
->^i::ToggleTerminal()
+; Right Ctrl + Alt + i
+!>^i::ToggleTerminal()
 
 ToggleTerminal()
 {
@@ -114,8 +115,8 @@ ToggleTerminal()
 ; google chrome hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + i
->^g::ToggleChrome()
+; Right Ctrl + Alt + g
+!>^g::ToggleChrome()
 
 ToggleChrome()
 {
@@ -128,22 +129,22 @@ ToggleChrome()
 ; vscode hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + c
-;>^c::ToggleVscode()
-;
-;ToggleVscode()
-;{
-;  if !WinActive(WinMatcher) {
-;    WinActivate,ahk_exe code.exe
-;  }
-;}
+; Right Ctrl + Alt + v
+!>^v::ToggleVscode()
+
+ToggleVscode()
+{
+  if !WinActive(WinMatcher) {
+    WinActivate,ahk_exe code.exe
+  }
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; eclipse hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + w
->^w::ToggleEclipse()
+; Right Ctrl + Alt + e
+!>^e::ToggleEclipse()
 
 ToggleEclipse()
 {
@@ -156,13 +157,41 @@ ToggleEclipse()
 ; A5MK2 hotkey
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Right Ctrl + s
->^s::ToggleA5()
+; Right Ctrl + Alt + a
+!>^a::ToggleA5()
 
 ToggleA5()
 {
   if !WinActive(WinMatcher) {
     WinActivate,ahk_exe A5M2.exe
+  }
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Slack hotkey
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Right Ctrl + Alt + s
+!>^s::ToggleSlack()
+
+ToggleSlack()
+{
+  if !WinActive(WinMatcher) {
+    WinActivate,ahk_exe Slack.exe
+  }
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Notion hotkey
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Right Ctrl + Alt + n
+!>^n::ToggleNotion()
+
+ToggleNotion()
+{
+  if !WinActive(WinMatcher) {
+    WinActivate,ahk_exe Notion.exe
   }
 }
 
